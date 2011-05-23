@@ -17,7 +17,7 @@ def generateTimeline(request):
   keyword = request.GET['key']
   now=datetime.datetime.now()
   lastWeek=[]
-  for i in range (6):
+  for i in range (8):
     lastWeek.append(now-datetime.timedelta(days=i));
   baseUrl="http://localhost:5984/whatnowdb/_fti/_design/article/by_title?&q="
   results={}
@@ -36,22 +36,27 @@ def generateTimeline(request):
     results[date]=''
     for line in f.readlines():
       results[date]+=line   
-
+  preJson['articles']=[]
   for day in results.iterkeys():
     articles=json.loads(results.get(day))
     if articles.has_key('rows'):
       fields=articles['rows']
       temp=[]
       for field in fields:
-        a={'title':field['fields']['title'],'popularity':field['fields']['popularity'],'url':field['id']}
-        temp.append(a)
-    preJson[day]=temp
-    print day
-    print preJson[day]
+        a={'date':day,'title':field['fields']['title'],'popularity':field['fields']['popularity'],'url':field['id']}
+        preJson['articles'].append(a)
+
     
     
+<<<<<<< HEAD
   return HttpResponse(json.dumps(preJson))   
 """
+=======
+  return HttpResponse(json.dumps(preJson))
+
+  
+         
+>>>>>>> 5d39fded42691348336b12ef3d8899eb64354225
           
         
         
