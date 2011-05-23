@@ -5,4 +5,7 @@ from wrapper import AutoKeyword
 
 def get(request):
     AutoKeyword.wrapKeyword()
-    return HttpResponse()
+    t = loader.get_template('index.html')
+    context=RequestContext(request)
+    context=checkSession(request,context)
+    return HttpResponse(t.render(context))

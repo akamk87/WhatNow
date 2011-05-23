@@ -14,16 +14,13 @@ function onLoad()
 	// get the keyword from parameter
 	text_ = getURLParam("key")
 	
-	
 	options.queryList[0].title = text_;
 	options.queryList[0].q = text_;
 	
 	var content = document.getElementById('div_google');
 	var newsShow = new google.elements.NewsShow(content, options);
-	loadTimeline(text_);
+	//loadTimeline(text_);
 }
-  
-<!--google.setOnLoadCallback(onLoad);-->
 
 function getURLParam(strParamName)
 {
@@ -82,7 +79,7 @@ function load_twit()
 	}).render().start();	
 }
 
-
+/*
 function loadTimeline(key){
 			url = '/getTimeline?key="' + key + '"';
 			$.ajax({
@@ -105,17 +102,4 @@ console.log(timeline.days[i]);
 }
 return timeline;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
