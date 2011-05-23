@@ -28,15 +28,11 @@
 		swfobject.embedSWF(src, target, w, h, "10", "expressInstall.swf", flashvars, params, attributes);
 	}
  	function cloudCallback(keyword){
-    console.log(keyword);
-    $("#navigation",window.parent.document).removeClass('hidden');
-    $("#navigation",window.parent.document).html("Viewing Topic: <b>"+keyword+"</b>");
-    $("#navigation",window.parent.document).attr("topic",keyword);
-    window.location="/timeline/?key="+keyword;
-}
-	
-	
-	
+	    $("#navigation",window.parent.document).removeClass('hidden');
+	    $("#navigation",window.parent.document).html("Viewing Topic: <b>"+keyword+"</b>");
+	    $("#navigation",window.parent.document).attr("topic",keyword);
+	    window.location="/timeline/?key="+keyword;
+	}	
 	</script>
 
 	<title>[CS457] Web-base Software Development - WhatNOW</title>

@@ -12,22 +12,16 @@ function onLoad() {
 	};
 
 	// get the keyword from parameter
-<<<<<<< HEAD
 	text_ = getURLParam("key")
 	
-=======
-	text_ = getURLParam("key");
-
->>>>>>> 5d39fded42691348336b12ef3d8899eb64354225
 	options.queryList[0].title = text_;
 	options.queryList[0].q = text_;
 
 	var content = document.getElementById('div_google');
 	var newsShow = new google.elements.NewsShow(content, options);
-	//loadTimeline(text_);
+	
+	loadTimeline(text_);
 }
-
-// <!--google.setOnLoadCallback(onLoad);-->
 
 function getURLParam(strParamName) {
 	var strReturn = "";
@@ -84,22 +78,8 @@ function load_twit() {
 	}).render().start();
 }
 
-<<<<<<< HEAD
-/*
-function loadTimeline(key){
-			url = '/getTimeline?key="' + key + '"';
-			$.ajax({
-				type : "GET",
-				dataType : "json",
-				url : url,
-				success : function(data) {
-					displayTimeline(eval(data));
-				}
-			});
-=======
 function loadTimeline(key) {
 	url = '/getTimeline?key="' + key + '"';
-	console.log('test');
 	$.ajax({
 		type : "GET",
 		dataType : "json",
@@ -109,7 +89,6 @@ function loadTimeline(key) {
 			displayTimeline(eval(data));
 		}
 	});
->>>>>>> 5d39fded42691348336b12ef3d8899eb64354225
 }
 
 function displayTimeline(timeline) {
@@ -166,7 +145,3 @@ function displayTimeline(timeline) {
 
 	}
 }
-<<<<<<< HEAD
-*/
-=======
->>>>>>> 5d39fded42691348336b12ef3d8899eb64354225

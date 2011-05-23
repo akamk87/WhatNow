@@ -45,12 +45,12 @@
 	margin-right: 10px;
 }
 
-
-#navigation{
-font-size: 16pt;
+#navigation {
+	font-size: 12pt;
 }
 #navigation b {
-font-size : 20pt;
+	font-size : 16pt;
+	color: black;
 }
 
 

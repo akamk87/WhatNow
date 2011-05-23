@@ -4,12 +4,12 @@ from security.userauth import checkSession
 
 def view(request) :
   t = loader.get_template('timeline.html')
-  #generateTimeline(request)
+  generateTimeline(request)
   context=RequestContext(request)
   context=checkSession(request,context)
   return HttpResponse(t.render(context))
 
-"""
+
 import datetime
 import urllib2
 import json
@@ -46,20 +46,8 @@ def generateTimeline(request):
         a={'date':day,'title':field['fields']['title'],'popularity':field['fields']['popularity'],'url':field['id']}
         preJson['articles'].append(a)
 
-    
-    
-<<<<<<< HEAD
   return HttpResponse(json.dumps(preJson))   
-"""
-=======
-  return HttpResponse(json.dumps(preJson))
 
-  
-         
->>>>>>> 5d39fded42691348336b12ef3d8899eb64354225
-          
-        
-        
         
         
         
